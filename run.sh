@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # default environment is production, override with environment variable
-set ENV=${TIDEWAYS_ENV:-production}
+tidewaysEnv=${TIDEWAYS_ENV:-production}
 
-echo "Starting Tideways Daemon with env=$ENV"
+echo "Starting Tideways Daemon with env=$tidewaysEnv"
 
-tideways-daemon --hostname=tideways-daemon --address=0.0.0.0:9135 --env=$ENV >> /dev/stdout 2>/dev/stderr
+tideways-daemon --hostname=tideways-daemon --address=0.0.0.0:9135 --env=$tidewaysEnv >> /dev/stdout 2>/dev/stderr
 
 /sbin/my_init
