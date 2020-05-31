@@ -13,6 +13,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && apt-get install -yq tideway
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
+ADD run.sh /run.sh
+
 RUN tideways-daemon -version
 
 CMD ["/run.sh"]
